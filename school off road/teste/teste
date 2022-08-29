@@ -1,0 +1,36 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    teste                                              :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/08/27 10:15:14 by jaiperei          #+#    #+#              #
+#    Updated: 2022/08/27 10:15:20 by jaiperei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+3 - Converter letras de string inserida para +13 ( e -13). Dar quebra de linha se input vazio
+
+main(int argc, char **argv)
+
+if(argc == 2)
+
+//argc == 1	empty - just ./a.out
+//argc == 2	command + string	./a.out "fafd dafadf"
+//argv[0]	command	"./a.out"
+//argv[1]	string		"fafd dafadf"
+
+
+int main(int par_count, char *par_cont[])
+{
+    char    *str;
+    
+    str = par_cont[1];
+    while (*str)
+    {
+        write(1, str, 1);
+        str++;
+    }
+    return 0;
+}

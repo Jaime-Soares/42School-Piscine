@@ -1,0 +1,29 @@
+*define pointer
+char	*str
+
+*define size (bytes)
+#define LEN	42
+
+*use malloc to allocate memory for that type of data (char)
+str = (char*) malloc(sizeof(*str) * (LEN + 1);			// LEN + 1 to save '\0' 
+
+*fill with values
+i = 0;
+while (i < LEN)
+{
+	str[i] = '0' + (i % 10);                 result:012345678901234567890123456789012345678901
+}
+str[i] = '\0';			end of string
+while (1)
+;				kill program
+
+*check memory used
+gcc filename.c
+./a.out &		run in background
+top
+
+fg to return
+
+*free memory allocated by malloc
+free (str)
+
