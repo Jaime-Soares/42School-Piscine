@@ -1,44 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 14:07:39 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/08/29 14:07:49 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/08/30 11:02:09 by jaiperei          #+#    #+#             */
+/*   Updated: 2022/08/30 11:02:12 by jaiperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-int	ft_iterative_power(int nb, int power)
+int	get_square(int sqr)
 {
-	int result;
+	return sqr * sqr;
+}
+
+int	ft_sqrt(int nb)
+{
+	int	sqr;
 	
-	result = nb;
-	if (power < 0)
-	{
+	sqr = 1;
+	if (nb < sqr * sqr)
+	{ 
 		return (0);
 	}
-	else if (power == 0)
+	while (nb > sqr * sqr)
 	{
-		return (1);
+		sqr++;
+		if (nb < sqr * sqr)
+	    { 
+		return (0);
+	    }
 	}
-	else
-	{
-		while (power > 1)
-		{
-			result *= nb;
-			power--;
-		}
-		return (result);
-	}
+	return sqr;	
 }
 
 int	main()
 {
-	int result;
+	int	result;
 	
-	result = ft_iterative_power(4, 2);
+	result = ft_sqrt(1);
 	printf("%d", result);
 }
+	
