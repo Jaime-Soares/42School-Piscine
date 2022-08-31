@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 17:00:31 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/08/30 17:00:35 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/08/30 17:15:51 by jaiperei          #+#    #+#             */
+/*   Updated: 2022/08/30 17:16:17 by jaiperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 int	main(int argc, char *argv[])
 {
 	char	*str;
-	int	i;
-		
-	i = 0; 
+	int     i;
+	
+	i = argc - 1;
 	if (argc > 1)
 	{
-		while (i < argc)
+		while (i > 0)
 		{
-			str = argv[1 + i];
+			str = argv[i];
 			while (*str)
 			{
 				write(1, str, 1);
 				str++;
 				
 			}
-			if (i < argc - 2)
+			if (i > 1)
 			{
 			    write(1, "\n", 1);
 			}
-			i++;
+			i--;
 		}			
 	}
 }
