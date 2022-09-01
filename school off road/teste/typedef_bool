@@ -1,26 +1,13 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    atoi                                               :+:      :+:    :+:    #
+#    typedef_bool                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/29 12:40:39 by jaiperei          #+#    #+#              #
-#    Updated: 2022/08/29 12:40:43 by jaiperei         ###   ########.fr        #
+#    Created: 2022/09/01 11:07:38 by jaiperei          #+#    #+#              #
+#    Updated: 2022/09/01 11:07:41 by jaiperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-atoi - convert string to int
-
-#include <stdio.h>
-#include <stdlib.h>
-
-int main () {
-   int val;
-   char str[20] = "98993489";
-   
-   val = atoi(str);
-   printf("String value = %s\nInt value = %d", str, val);
-
-   return(0);
-}
+typedef enum { false = 0, true = !false } t_bool;

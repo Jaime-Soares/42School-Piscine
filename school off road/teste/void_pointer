@@ -1,26 +1,29 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    atoi                                               :+:      :+:    :+:    #
+#    void_pointer                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/29 12:40:39 by jaiperei          #+#    #+#              #
-#    Updated: 2022/08/29 12:40:43 by jaiperei         ###   ########.fr        #
+#    Created: 2022/08/31 13:40:04 by jaiperei          #+#    #+#              #
+#    Updated: 2022/08/31 13:40:08 by jaiperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-atoi - convert string to int
+int a = 10;
+char b = 'x';
+ 
+void *p = &a;  // void pointer holds address of int 'a'
+p = &b; // void pointer holds address of char 'b'
 
-#include <stdio.h>
-#include <stdlib.h>
+1) malloc() and calloc() return void * type and this allows these functions to be used to allocate memory of any data type (just because of void *) 
 
-int main () {
-   int val;
-   char str[20] = "98993489";
-   
-   val = atoi(str);
-   printf("String value = %s\nInt value = %d", str, val);
+* to get value, type cast
 
-   return(0);
+int main()
+{
+    int a = 10;
+    void *ptr = &a;
+    printf("%d", *(int *)ptr);
+    return 0;
 }

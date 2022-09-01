@@ -1,26 +1,28 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    atoi                                               :+:      :+:    :+:    #
+#    vim_commands                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/29 12:40:39 by jaiperei          #+#    #+#              #
-#    Updated: 2022/08/29 12:40:43 by jaiperei         ###   ########.fr        #
+#    Created: 2022/09/01 11:16:43 by jaiperei          #+#    #+#              #
+#    Updated: 2022/09/01 11:16:51 by jaiperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-atoi - convert string to int
+in terminal
 
-#include <stdio.h>
-#include <stdlib.h>
+* create file:
+vim fileName
 
-int main () {
-   int val;
-   char str[20] = "98993489";
-   
-   val = atoi(str);
-   printf("String value = %s\nInt value = %d", str, val);
 
-   return(0);
-}
+in vim:
+
+* to edit:
+:i	//insert
+
+* save file:
+:w	//write
+:q 	//quit
+
+

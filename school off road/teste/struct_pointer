@@ -1,26 +1,28 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    atoi                                               :+:      :+:    :+:    #
+#    struct_pointer                                     :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/29 12:40:39 by jaiperei          #+#    #+#              #
-#    Updated: 2022/08/29 12:40:43 by jaiperei         ###   ########.fr        #
+#    Created: 2022/09/01 10:35:11 by jaiperei          #+#    #+#              #
+#    Updated: 2022/09/01 10:35:13 by jaiperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-atoi - convert string to int
+struct dog
+{
+    char name[10];
+    char breed[10];
+    int age;
+    char color[10];
+};
 
-#include <stdio.h>
-#include <stdlib.h>
+struct dog spike;
 
-int main () {
-   int val;
-   char str[20] = "98993489";
-   
-   val = atoi(str);
-   printf("String value = %s\nInt value = %d", str, val);
+struct dog *ptr_dog;
 
-   return(0);
-}
+ptr_dog = &spike;
+
+ptr_dog->name
+ptr_dog->breed

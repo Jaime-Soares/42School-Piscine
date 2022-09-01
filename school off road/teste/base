@@ -10,11 +10,30 @@
 #                                                                              #
 # **************************************************************************** #
 
-// get base size
+principle
+
+binary: {0, 1}
+
+ex: 100
+256	128	64	32	16	8	4	2	1
+		1	1	0	0	1	0	0
+		
+hexadec: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F} 
+
+ex: 100
+256	16	1
+	6	4
+
+
+// get base size (binary = 2, ...)
 // get value of base if nbr < base size
-// go step by step (get remainder to get position)
-// add to result array (base[position])
-// go step by step (divide by base size)
+
+// 1 - get remainder of nbr by base a(to get positions from last to first)
+// 2 - add to result array (base[position])
+// 3 - divide by base to get move to next position
+// 4 - repeat 1 to 3 till nbr < base
+// reverse res array
+
 
 #include <stdio.h>
 // base array count

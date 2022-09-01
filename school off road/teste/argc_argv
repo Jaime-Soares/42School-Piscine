@@ -1,26 +1,30 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    atoi                                               :+:      :+:    :+:    #
+#    argc_argv                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/29 12:40:39 by jaiperei          #+#    #+#              #
-#    Updated: 2022/08/29 12:40:43 by jaiperei         ###   ########.fr        #
+#    Created: 2022/09/01 12:36:38 by jaiperei          #+#    #+#              #
+#    Updated: 2022/09/01 12:36:43 by jaiperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-atoi - convert string to int
+./a.out casa nome
 
-#include <stdio.h>
-#include <stdlib.h>
+argc - arguments number (3)
+argv - *argv[1] = casa
 
-int main () {
-   int val;
-   char str[20] = "98993489";
-   
-   val = atoi(str);
-   printf("String value = %s\nInt value = %d", str, val);
 
-   return(0);
+int main( int argc, char *argv[] )  {
+
+   if( argc == 2 ) {
+      printf("The argument supplied is %s\n", argv[1]);
+   }
+   else if( argc > 2 ) {
+      printf("Too many arguments supplied.\n");
+   }
+   else {
+      printf("One argument expected.\n");
+   }
 }

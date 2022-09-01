@@ -5,7 +5,13 @@ char	*str
 #define LEN	42
 
 *use malloc to allocate memory for that type of data (char)
-str = (char*) malloc(sizeof(*str) * (LEN + 1);			// LEN + 1 to save '\0' 
+str = (char*) malloc(sizeof(type) * (LEN + 1);			// LEN + 1 to save '\0' 
+
+type:
+sizeof(char) = 1
+sizeof(int) = 4
+...
+
 
 *fill with values
 i = 0;
