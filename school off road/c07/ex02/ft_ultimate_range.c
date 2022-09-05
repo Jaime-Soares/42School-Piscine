@@ -10,44 +10,75 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
-int	ft_ultimate_range(int **range, int min, int max)
+void	ft_fill_array(int *arr, int min, int max)
 {
-	int	*n = NULL;
-	int	*p;
 	int	i;
-	int	size;
 	
-	range = &p;
+	i = 0;
+	while (min < max)
+	{
+		arr[i] = min;
+		min++;
+		i++;
+	}
+}
+
+int ft_ultimate_range(int **range, int min, int max)
+{
+	int	n_int;
+	int	*n_arr;
+	int	*arr;
+	int	size;
+	int	int_size;
+
 	if(min < max)
 	{
-		p = malloc(4 * (max - min);
-		range = &p;
-		i = 0;
-		size = 0;
-		while (min < max)
+		size = max - min;
+		arr = (int *) malloc(int_size * size);
+		ft_fill_array(arr, min, max);
+		if (!arr)
 		{
-			p[i] = min;
-			min++;
-			i++;
-			size++;
+			return (-1);
 		}
+		range = &arr;
 		return (size);
 	}
 	else
 	{
-		range = &n;
+		n_arr = (int *) NULL;
+		range = &n_arr;
 		return (0);
 	}
 }
+/*
+int	**ft_ultimate_range2(int **range, int min, int max)
+{
+	int	*n_arr;
+	int	*arr;
+	int	size;
+	int	int_size;
+	
+	if(min < max)
+	{
+		size = max - min;
+		arr = (int *) malloc(int_size * size);
+		ft_fill_array(arr, min, max);
+		range = &arr;
+		return (range);
+	}
+}
 
+#include <stdio.h>
 int	main()
 {
 	int	size;
 	int	**range;
 	
-	size = ft_ultimate_range(range, 10, 26);
-	printf("%d", size);
-}
+    size = ft_ultimate_range(range, 10, 26);
+	printf("Size: %d\n", size);
+	range = ft_ultimate_range2(range, 10, 26);
+	printf("Range[0]: %d\n", *range[0]);
+	
+}*/

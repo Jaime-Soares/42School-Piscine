@@ -11,14 +11,28 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-long int	ft_negative(long int value)
+int	ft_negative(int value)
 {
+	int	val;
+
 	if (value < 0)
 	{
 		write (1, "-", 1);
-		value *= -1;
+		if (value == -2147483648)
+		{
+			write (1, "2", 1);
+			val = 147483648;
+		}
+		else
+		{
+			val = value * (-1);
+		}
 	}
-	return (value);
+	else
+	{
+		val = value;
+	}
+	return (val);
 }
 
 int	ft_size(long int value)
@@ -49,12 +63,13 @@ int	ft_power(int exp)
 	return (result);
 }
 
-void	ft_run(long int value)
+void	ft_putnbr(int nb)
 {
-	int	size;
 	int	digit;
-	
-	value = ft_negative(value);
+	int	size;
+	int	value;
+
+	value = ft_negative(nb);
 	size = ft_size(value);
 	while (size > 0)
 	{
@@ -62,12 +77,4 @@ void	ft_run(long int value)
 		write(1, &digit, 1);
 		size--;
 	}
-}
-
-void	ft_putnbr(int nb)
-{
-	long int	value;
-
-	value = nb;
-	ft_run(value);
 }

@@ -47,7 +47,7 @@ void	create_array(int *arr)
 		arr[i] = '0';
 		if (i == 4)
 		{
-			arr[i] = '1';
+			arr[i] = '0';
 		}
 		i++;
 	}

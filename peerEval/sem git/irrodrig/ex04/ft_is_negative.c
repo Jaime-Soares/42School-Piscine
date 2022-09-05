@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: irrodrig <irrodrig@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 18:13:21 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/08/31 18:14:27 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/08/18 18:11:47 by irrodrig          #+#    #+#             */
+/*   Updated: 2022/08/21 10:32:23 by irrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-struct Point{
-	int x;
-	int y;
-} t_point; 
+void	ft_is_negative(int n)
+{
+	char	o;
+	char	p;
+
+	o = 'N';
+	p = 'P';
+	if (n < 0)
+	{
+		write (1, &o, 1);
+	}
+	else
+	{
+		write (1, &p, 1);
+	}
+}

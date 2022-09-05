@@ -1,28 +1,15 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    struct_pointer                                     :+:      :+:    :+:    #
+#    general_concepts                                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/01 10:35:11 by jaiperei          #+#    #+#              #
-#    Updated: 2022/09/01 10:35:13 by jaiperei         ###   ########.fr        #
+#    Created: 2022/09/01 13:54:56 by jaiperei          #+#    #+#              #
+#    Updated: 2022/09/01 13:54:59 by jaiperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-struct dog
-{
-    char name[10];
-    char breed[10];
-    int age;
-    char color[10];
-};
+rational numbers - numbers whose sqr root is an int
 
-struct dog spike;
-
-struct dog *ptr_dog;
-
-ptr_dog = &spike;
-
-ptr_dog->name
-ptr_dog->breed
+printable characters - ascii 32-127 

@@ -1,0 +1,78 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    pointer_to_matrix                                  :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/01 16:42:05 by jaiperei          #+#    #+#              #
+#    Updated: 2022/09/01 16:42:08 by jaiperei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+Let us suppose a two-dimensional array
+
+int matrix[3][3];
+
+For the above array,
+
+matrix               =>    Points to base address of two-dimensional array.
+                           Since array decays to pointer.
+
+*(matrix)            =>    Points to first row of two-dimensional array.
+*(matrix + 0)        =>    Points to first row of two-dimensional array.
+*(matrix + 1)        =>    Points to second row of two-dimensional array.
+
+**matrix             =>    Points to matrix[0][0]
+*(*(matrix + 0))     =>    Points to matrix[0][0]
+*(*(matrix + 0) + 0) =>    Points to matrix[0][0]
+*(*matrix + 1)       =>    Points to matrix[0][1]
+*(*(matrix + 0) + 1) =>    Points to matrix[0][1]
+*(*(matrix + 2) + 2) =>    Points to matrix[2][2]
+
+printf("Value returned by matrix: %d.\n", *(*(matrix + 1)));
+
+****************
+
+Double pointer to matrix
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])  {
+    
+	int matrix[2][2];
+	int **mat;
+    
+	matrix[0][0] = 0;
+    	matrix[0][1] = 1;
+    	matrix[1][0] = 10;
+    	matrix[1][1] = 11;
+    
+    	int i;
+    	i = 0;
+    
+    	//a)
+	mat = malloc(2 * sizeof(int *));	//2 - number of rows (2 pointers) (a)
+	while (i < 2)
+	{
+	    //b
+	    mat[i] = malloc(2 * sizeof(int));		//2 - number of columns (2 ints) (b)
+	    i++;
+	}
+	
+	mat[0] = matrix[0];
+	mat[1] = matrix[1];
+    
+	printf("Value returned by matrix: %d.\n", *(*(matrix + 1) + 1));
+	printf("Value returned by double pointer: %d.\n", *(*(mat + 1) + 1));
+
+
+	//(a)
+	//allocate memory for pointers of each array (2 arrays - 2 pointers)
+
+	//(b)
+	//for each pointer address allocate memory for the array (array size - 2 ints)
+   
+}
+

@@ -10,13 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_string_size(char *str)
 {
 	int	count;
-	
+
 	count = 0;
 	while (*str)
 	{
@@ -28,13 +27,15 @@ int	ft_string_size(char *str)
 
 char	*ft_strdup(char *src)
 {
-	int	size;
+	int	str_size;
 	char	*str;
-	int i;
-	
+	int	i;
+	int	char_size;
+
+	char_size = 1;
 	i = 0;
-	size = ft_string_size(src);
-	str = (char *) malloc(size);
+	str_size = ft_string_size(src);
+	str = (char *) malloc(char_size * str_size);
 	while (src[i])
 	{
 		str[i] = src[i];
@@ -42,11 +43,13 @@ char	*ft_strdup(char *src)
 	}
 	return (str);	
 }
-
+/*
+#include <stdio.h>
 int	main()
 {
-	char	src[15] = "Hello my friend";
+	char	src[] = "Hello my friend";
 	
 	printf("%s", ft_strdup(src));
 	
 }
+*/

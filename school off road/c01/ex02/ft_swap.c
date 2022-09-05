@@ -10,11 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-	int m;
-	
+	int	m;
+
 	m = *a;
 	*a = *b;
 	*b = m;
 }
+/*
+int	main()
+{
+	int	nbr1;
+	int	nbr2;
+	int	*a;
+	int	*b;
+	
+	a = &nbr1;
+	b = &nbr2;
+	nbr1 = 1;
+	nbr2 = 2;
+	printf("Before:\n");
+	printf("nbr1: %d\n", nbr1);
+	printf("nbr2: %d\n", nbr2);
+	printf("After:\n");
+	printf("nbr1: %d\n", nbr1);
+	printf("nbr2: %d\n", nbr2);
+	
+	ft_swap(a, b);
+}
+*/

@@ -14,3 +14,14 @@ void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
+/*
+int main()
+{
+	int	nbr;
+	int	*ptr;    
+	
+	ptr = &nbr;
+	ft_ft(ptr);   
+	printf("%d", nbr);
+}
+*/

@@ -8,7 +8,6 @@ git@vogsphere.42porto.com:vogsphere/intra-uuid-28148b34-8a13-45b0-849d-eda5cebc0
 
 
 shell01
-
 #0
 git@vogsphere.42porto.com:vogsphere/intra-uuid-5246ec3f-a577-4d6c-95d7-044d5017b702-4336204-jaiperei
 
@@ -20,5 +19,23 @@ git@vogsphere.42porto.com:vogsphere/intra-uuid-c3fb2b61-d4c6-4424-b929-8ba396f97
 C00
 git@vogsphere.42porto.com:vogsphere/intra-uuid-5f732582-e541-4705-9d85-85a67c0af046-4340438-jaiperei
 
+git@vogsphere.42porto.com:vogsphere/intra-uuid-a00c7239-c876-42ff-94b2-b1410ad23cfa-4383714-jaiperei
+
+
+C01
+git@vogsphere.42porto.com:vogsphere/intra-uuid-c7085a40-bbe4-40eb-bba5-3db016d4626e-4379982-jaiperei
+
+
+C02
+git@vogsphere.42porto.com:vogsphere/intra-uuid-2fdde6d5-b66f-4cbb-9e7b-1dcc949144bb-4384101-jaiperei
+
+
+C03
+git@vogsphere.42porto.com:vogsphere/intra-uuid-758a7e68-4238-4306-8fc4-be8fe09fe6c8-4387846-jaiperei
+
+
 other
-git push origin master https://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@github.com/Jaime-Soares/42School-Piscine.git
+git push https://personal token@github.com/Jaime-Soares/project name.git
+git push https://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@github.com/Jaime-Soares/42School-Piscine.git
+
+
