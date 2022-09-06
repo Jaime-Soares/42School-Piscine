@@ -1,51 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:51 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/09/05 16:54:54 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/08/27 15:00:43 by jaiperei          #+#    #+#             */
+/*   Updated: 2022/08/27 15:00:57 by jaiperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int	ft_str_is_alpha(char *str)
 {
 	int	i;
-	int	j;
-	int	pos;
 
 	i = 0;
-	pos = -1;
-	while (to_find[i])
+	while (str[i])
 	{
-		j = 0;
-		while (str[i + j])
+		if (!((str[i] >= 'A' && str[i] <= 'Z') || \
+		(str[i] >= 'a' && str[i] <= 'z')))
 		{
-			if (str[i] == str[i + j] && pos == -1)
-			{
-				pos = i;
-			}
-			else
-			{
-				pos = -1;
-				i = 0;
-			}
-			j++;
+			return (0);
 		}
 		i++;
 	}
-	return (&str[pos]);
+	return (1);
 }
-
-#include <stdio.h>
+/*
+#include <unistd.h>
 int	main(void)
 {
-	char	*str = "Ola tudo bem?";
-	char	*to_find = "tudo";
-	char	*res;
-	
-	res = ft_strstr(str, to_find);
-	printf("String comum: %s", res);
+	char 	str[] = "sdhfk24375a";
+	char 	result;
+
+	result = ft_str_is_alpha(str) + '0';
+	write(1, &result, 1); 	
 }
+*/

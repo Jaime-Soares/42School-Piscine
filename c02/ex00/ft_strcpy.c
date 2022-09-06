@@ -1,51 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:51 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/09/05 16:54:54 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/08/27 10:23:46 by jaiperei          #+#    #+#             */
+/*   Updated: 2022/08/27 10:23:50 by jaiperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
-	int	j;
-	int	pos;
 
 	i = 0;
-	pos = -1;
-	while (to_find[i])
+	while (src[i])
 	{
-		j = 0;
-		while (str[i + j])
-		{
-			if (str[i] == str[i + j] && pos == -1)
-			{
-				pos = i;
-			}
-			else
-			{
-				pos = -1;
-				i = 0;
-			}
-			j++;
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (&str[pos]);
+	dest[i] = '\0';
+	return (dest);
 }
 
+/*
 #include <stdio.h>
-int	main(void)
+int main()
 {
-	char	*str = "Ola tudo bem?";
-	char	*to_find = "tudo";
-	char	*res;
-	
-	res = ft_strstr(str, to_find);
-	printf("String comum: %s", res);
+	char src[14] = "Ola tudo bem?";
+	char dest[14];
+
+	ft_strcpy(dest, src);
+	printf("dest: %s", dest);
 }
+*/

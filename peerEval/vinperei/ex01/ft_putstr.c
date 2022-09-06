@@ -3,26 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vinperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/28 16:05:57 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/08/28 16:06:00 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/09/06 17:19:11 by vinperei          #+#    #+#             */
+/*   Updated: 2022/09/06 17:22:20 by vinperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putstr(char *str)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
-	while (*str)
-	{
-		write(1, str, 1);
-		str++;
+	int	a;
+
+	a = 0;
+	while (str[a])
+	{	
+		write(1, &str[a], 1);
+		a++;
 	}
 }
 /*
-int	main()
-{
-	char str[] = "Ola, tudo bem?";
-	ft_putstr(str);
-	
-}
-*/
+int	main(void)
+{	
+	ft_putstr ("aaaddvf");
+	write (1, "\n", 1);
+}*/

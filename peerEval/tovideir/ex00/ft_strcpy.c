@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tovideir <tovideir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/28 14:21:41 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/08/28 14:21:45 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/08/29 12:11:27 by tovideir          #+#    #+#             */
+/*   Updated: 2022/08/29 16:57:37 by tovideir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	len;
+#include <unistd.h>
 
-	len = 0;
-	while(*str)
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
 	{
-		len++;
-		str++;
+		dest[i] = src [i];
+		i++;
 	}
-	return(len);
+	dest[i] = '\0';
+	return (dest);
 }
 /*
 #include <stdio.h>
-#include <unistd.h>
 int	main()
 {
-	int len;
-	char str[] = "Ola, tudo bem?";
-	
-	len = ft_strlen(str);
-	printf("len e %d", len);
-	return (0);
+	char	str[] = "this is a string";
+	char	dest2[] = "";
+
+	ft_strcpy(dest2, str);
+	printf("%s", dest2);
+	return 0;
 }
 */

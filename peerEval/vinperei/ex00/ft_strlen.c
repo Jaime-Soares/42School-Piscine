@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vinperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/28 16:05:57 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/08/28 16:06:00 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/09/06 17:15:19 by vinperei          #+#    #+#             */
+/*   Updated: 2022/09/06 17:18:40 by vinperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putstr(char *str)
+#include <stdio.h>
+
+int	ft_strlen(char *str)
 {
-	while (*str)
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		write(1, str, 1);
-		str++;
+		i++;
 	}
+	return (i);
 }
 /*
-int	main()
+int	main(void)
 {
-	char str[] = "Ola, tudo bem?";
-	ft_putstr(str);
-	
-}
-*/
+	char	*a;
+
+	a = ("testandooo42");
+	printf("%d", ft_strlen(a));
+}*/

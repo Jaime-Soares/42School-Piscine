@@ -1,51 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:51 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/09/05 16:54:54 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/08/28 09:45:56 by jaiperei          #+#    #+#             */
+/*   Updated: 2022/08/28 09:46:16 by jaiperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int	ft_str_is_uppercase(char *str)
 {
 	int	i;
-	int	j;
-	int	pos;
 
 	i = 0;
-	pos = -1;
-	while (to_find[i])
+	while (str[i])
 	{
-		j = 0;
-		while (str[i + j])
+		if (!(str[i] >= 'A' && str[i] <= 'Z'))
 		{
-			if (str[i] == str[i + j] && pos == -1)
-			{
-				pos = i;
-			}
-			else
-			{
-				pos = -1;
-				i = 0;
-			}
-			j++;
+			return (0);
 		}
 		i++;
 	}
-	return (&str[pos]);
+	return (1);
 }
-
-#include <stdio.h>
+/*
+#include <unistd.h>
 int	main(void)
 {
-	char	*str = "Ola tudo bem?";
-	char	*to_find = "tudo";
-	char	*res;
+	char 	str[11] = "2ASDEFG";
+	char 	result;
 	
-	res = ft_strstr(str, to_find);
-	printf("String comum: %s", res);
+	result = ft_str_is_uppercase(str) + '0';
+	write(1, &result, 1); 
+	
 }
+*/

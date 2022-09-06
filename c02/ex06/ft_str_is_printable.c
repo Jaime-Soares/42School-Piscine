@@ -1,51 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:51 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/09/05 16:54:54 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/08/28 09:50:47 by jaiperei          #+#    #+#             */
+/*   Updated: 2022/08/28 09:50:51 by jaiperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
-{
+int	ft_str_is_printable(char *str)
+{	
 	int	i;
-	int	j;
-	int	pos;
 
 	i = 0;
-	pos = -1;
-	while (to_find[i])
+	while (str[i])
 	{
-		j = 0;
-		while (str[i + j])
+		if (!(str[i] >= 32 && str[i] <= 126))
 		{
-			if (str[i] == str[i + j] && pos == -1)
-			{
-				pos = i;
-			}
-			else
-			{
-				pos = -1;
-				i = 0;
-			}
-			j++;
+			return (0);
 		}
 		i++;
 	}
-	return (&str[pos]);
+	return (1);
 }
-
-#include <stdio.h>
+/*
+#include <unistd.h>
 int	main(void)
 {
-	char	*str = "Ola tudo bem?";
-	char	*to_find = "tudo";
-	char	*res;
-	
-	res = ft_strstr(str, to_find);
-	printf("String comum: %s", res);
+	char 	str[11] = "s\ndhfk243fgs";
+	char 	result;
+
+	result = ft_str_is_printable(str) + '0';
+	write(1, &result, 1);	
 }
+*/

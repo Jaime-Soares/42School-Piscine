@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tovideir <tovideir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/28 16:05:57 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/08/28 16:06:00 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/09/01 15:49:00 by tovideir          #+#    #+#             */
+/*   Updated: 2022/09/03 13:06:30 by tovideir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putstr(char *str)
+char	*ft_strupcase(char *str)
 {
-	while (*str)
+	int	i;
+
+	i = 0;
+	while (str[i] != 0)
 	{
-		write(1, str, 1);
-		str++;
+		if (97 <= str[i] && str[i] <= 122)
+			str[i] = str[i] - 32;
+		i++;
 	}
+	return (str);
 }
 /*
-int	main()
+#include <stdio.h>
+int	main(int argc, char **argv)
 {
-	char str[] = "Ola, tudo bem?";
-	ft_putstr(str);
-	
+	printf("%s\n", ft_strupcase(argv[1]));
+	return 0;
 }
 */

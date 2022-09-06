@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: disantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/28 16:05:57 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/08/28 16:06:00 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/09/02 10:46:55 by disantos          #+#    #+#             */
+/*   Updated: 2022/09/02 11:14:22 by disantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putstr(char *str)
+#include <unistd.h>
+
+int	main(int argc, char **argv)
 {
-	while (*str)
+	while (argc > 0 && *argv[0])
 	{
-		write(1, str, 1);
-		str++;
+		write(1, &*argv[0], 1);
+		argv[0]++;
 	}
+	write(1, "\n", 1);
 }
-/*
-int	main()
-{
-	char str[] = "Ola, tudo bem?";
-	ft_putstr(str);
-	
-}
-*/

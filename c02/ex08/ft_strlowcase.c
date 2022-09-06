@@ -1,51 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 16:54:51 by jaiperei          #+#    #+#             */
-/*   Updated: 2022/09/05 16:54:54 by jaiperei         ###   ########.fr       */
+/*   Created: 2022/08/28 10:12:28 by jaiperei          #+#    #+#             */
+/*   Updated: 2022/08/28 10:12:34 by jaiperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
-	int	j;
-	int	pos;
+	int	diff;
 
+	diff = 0;
 	i = 0;
-	pos = -1;
-	while (to_find[i])
+	while (str[i])
 	{
-		j = 0;
-		while (str[i + j])
+		if (str[i] >= 'A' && str[i] <= 'Z')
 		{
-			if (str[i] == str[i + j] && pos == -1)
-			{
-				pos = i;
-			}
-			else
-			{
-				pos = -1;
-				i = 0;
-			}
-			j++;
+			diff = 'Z' - str[i];
+			str[i] = 'z' - diff;
 		}
 		i++;
 	}
-	return (&str[pos]);
+	return (str);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
-	char	*str = "Ola tudo bem?";
-	char	*to_find = "tudo";
-	char	*res;
-	
-	res = ft_strstr(str, to_find);
-	printf("String comum: %s", res);
+	char 	str[11] = "sdhFK243asf";
+
+	ft_strlowcase(str);
+	printf("%s", str);
+	return (0);
 }
+*/

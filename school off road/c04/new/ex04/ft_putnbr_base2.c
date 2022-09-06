@@ -11,70 +11,72 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-int	ft_base_count(char *base)
+int	ft_count_base(char *base)
 {
-	int	count;
-	
-	count = 0;
+	int	size;
+
+	size = 0;
 	while (*base)
 	{
-		count++;
-		base++;	
+		size++;
+		base++;
 	}
-	return count;
+	return (size);
 }
 
-void    rev_arr(char *res)
+void	ft_rev_arr(char *res)
 {
-    char    mid;
-    int size;
-    int i;
-    
-    size = ft_base_count(res);
-    while (i < size / 2)
-    {
-        mid = res[i];
-        res[i] = res[size - 1 - i];
-        res[size - 1 - i] = mid;
-        i++;
-    }
-    
-}
+	int	arr_size;
+	char	aux;
+	int	i;
+	
+	i = 0;
+	arr_size = 0;
+	while (*res)
+	{
+		arr_size++;
+	}
+	if (arr_size > 1)
+	{
+		while (i <= arr_size / 2)
+		{
+			aux = res[i];
+			res[i] = res[arr_size - 1 -i];
+			res[arr_size - 1 -i] = aux;
+			i++;
+		}
+	}
+} 
 
 void ft_putnbr_base(int nbr, char *base)
 {
-	char	res[20];
-	int	base_size;
-	int	char_pos;
-	int	i;
+	int	num;
+	char	res[99];
+	int digit;
+	int i;
+    int size;
 	
-	base_size = ft_base_count(base);
-	while(nbr > base_size)
+	num = nbr;
+	i = 0;
+	size = ft_count_base(base);
+	while ( nbr > size)
 	{
-		char_pos = nbr % base_size;
-		res[i] = base[char_pos];
-		nbr /= base_size;
+		digit = nbr % size;
+		res[i] = base[digit];
+		nbr /= size;
 		i++;
-		if (nbr <= base_size)
-		{
-			res[i] = base[nbr];
-			nbr /= base_size;
-			i++;
-			res[i] = '\0';
-		} 
 	}
-	rev_arr(res);
-	printf("%s", res);
-	
+	res[i] = '\0';
+	ft_rev_arr(res);
+	printf("My number: %s", res);
 }
 
 int	main()
 {
-	int	num = 282;
+	int	nbr = 282;
 	char	base[17] = "0123456789ABCDEF";
 	
-	ft_putnbr_base(num, base);
+	ft_putnbr_base(nbr, base);
 	return 0;
 }
 
