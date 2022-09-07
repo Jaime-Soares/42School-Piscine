@@ -1,0 +1,29 @@
+create library - functions to be used with main 
+
+*create main.c
+vim main.c
+
+*create .o	//object from c files
+gcc -c ft_putchar.c	// ft_putchar.o
+gcc -c ft_putstr.c	// ft_putstr.o
+
+*add to lib
+ar rc libstr.a ft_putchar.o ft_putstr.o	// .a	static library
+
+*use lib
+gcc main.c -L. -lstr			// all libs start with lib so our lib is str - lstr
+					// -L. current directory
+
+
+*run main.c
+./a.out
+
+*compile to executable -o nameProgram 
+gcc -ft_putchar.o -ft_putstr.o -o j007
+
+*run executable
+$./j007
+
+*index to library
+ranlib libstr.a
+

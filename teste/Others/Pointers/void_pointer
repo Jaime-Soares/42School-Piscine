@@ -1,0 +1,29 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    void_pointer                                       :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/08/31 13:40:04 by jaiperei          #+#    #+#              #
+#    Updated: 2022/08/31 13:40:08 by jaiperei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+int a = 10;
+char b = 'x';
+ 
+void *p = &a;  // void pointer holds address of int 'a'
+p = &b; // void pointer holds address of char 'b'
+
+1) malloc() and calloc() return void * type and this allows these functions to be used to allocate memory of any data type (just because of void *) 
+
+* to get value, type cast
+
+int main()
+{
+    int a = 10;
+    void *ptr = &a;
+    printf("%d", *(int *)ptr);
+    return 0;
+}

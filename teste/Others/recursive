@@ -1,0 +1,93 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    recursive                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/08/29 16:33:48 by jaiperei          #+#    #+#              #
+#    Updated: 2022/08/29 16:33:58 by jaiperei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+*give the starting points (seeds)
+*give the last value and the path till 1st
+
+
+- get the sum of even numbers til n
+
+#include <stdio.h>
+
+int	ft_sum_even(int n)
+{
+    int result;
+    
+    if(n < 2) 
+    {
+      return 0;
+    }
+    if(n == 2) 
+    {
+      return 2;
+    }
+    
+    if (n % 2 == 0)
+    {
+        return n + ft_sum_even(n - 2);
+    }
+    else
+    {
+        return (n - 1) + ft_sum_even(n - 3);
+    }
+    
+    
+}
+
+int	main()
+{
+	int result;
+	
+	result = ft_sum_even(9);
+	printf("%d", result);
+}
+
+
+
+- get the sum of odds till n
+
+#include <stdio.h>
+
+int	ft_sum_odds(int n)
+{
+    int result;
+    
+    if(n < 2) 
+    {
+      return 0;
+    }
+    if(n == 2) 
+    {
+      return 2;
+    }
+    
+    if (n % 2 != 0)
+    {
+        return n + ft_sum_odds(n - 2);
+    }
+    else
+    {
+        return (n - 1) + ft_sum_even(n - 3);
+    }
+}
+
+int	main()
+{
+	int result;
+	
+	result = ft_sum_odds(9);
+	printf("%d", result);
+}
+
+
+
+

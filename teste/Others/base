@@ -1,0 +1,122 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    base                                               :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/08/30 13:41:03 by jaiperei          #+#    #+#              #
+#    Updated: 2022/08/30 13:41:08 by jaiperei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+principle
+
+binary: {0, 1}
+
+ex: 100
+256	128	64	32	16	8	4	2	1
+		1	1	0	0	1	0	0
+		
+hexadec: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F} 
+
+ex: 100
+256	16	1
+	6	4
+
+
+// get base size (binary = 2, ...)
+// get value of base if nbr < base size
+
+// 1 - get remainder of nbr by base to get positions from last to first)
+// 2 - add to result array (base[position])
+// 3 - divide by base to get move to next position
+// 4 - repeat 1 to 3 till nbr < base
+// reverse res array
+
+
+#include <stdio.h>
+// base array count
+int	ft_base_count(char *base)
+{
+	int	count;
+	
+	count = 0;
+	while (*base)
+	{
+		count++;
+		base++;	
+	}
+	return count;
+}
+
+// reverse result array
+void    rev_arr(char *res)
+{
+    char    mid;
+    int size;
+    int i;
+    
+    i = 0;
+    size = ft_base_count(res);
+    while (i < size / 2)
+    {
+        mid = res[i];
+        res[i] = res[size - 1 - i];
+        res[size - 1 - i] = mid;
+        i++;
+    }
+    
+}
+
+// get chars
+void ft_putnbr_base(int nbr, char *base)
+{
+	char	res[99];
+	int	base_size;
+	int	char_pos;
+	int	i;
+
+	base_size = ft_base_count(base);
+	i = 0;
+	// if number inside base range
+	if (nbr <= base_size - 1)
+	{
+		res[i] = base[nbr];
+	}
+	else
+	{
+		while(nbr > base_size - 1)
+		{
+			char_pos = nbr % base_size;
+			//get remainder squeezed to base range to get position in base
+			while (char_pos > base_size - 1)
+			{
+			    char_pos %= base_size;
+			}
+			// add to result array
+			res[i] = base[char_pos];
+			//
+			nbr /= base_size;
+			i++;
+			if (nbr <= base_size - 1)
+			{
+				res[i] = base[nbr];
+				nbr /= base_size;
+				i++;
+				res[i] = '\0';
+			} 
+		}
+	}
+	rev_arr(res);
+	printf("%s", res);	
+}
+
+int	main()
+{
+	int	num = 282;
+	char	base[17] = "0123456789ABCDEF";
+	
+	ft_putnbr_base(num, base);
+	return 0;
+}

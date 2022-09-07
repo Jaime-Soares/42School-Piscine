@@ -1,0 +1,49 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    pointer_to_function                                :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/02 10:44:49 by jaiperei          #+#    #+#              #
+#    Updated: 2022/09/02 11:55:06 by jaiperei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#include <unistd.h>
+
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int main()
+{
+	void	(*f)(char);
+	f = &ft_putchar;
+	f('z');
+	return(0);
+}
+
+
+
+****
+using typedef
+
+
+#include <unistd.h>
+
+typedef void (*funptr)(char);
+
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int main()
+{
+	funptr f;
+	f = &ft_putchar;
+	f('z');
+	return(0);
+}

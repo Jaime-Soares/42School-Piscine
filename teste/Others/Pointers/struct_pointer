@@ -1,0 +1,38 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    struct_pointer                                     :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/01 10:35:11 by jaiperei          #+#    #+#              #
+#    Updated: 2022/09/01 10:35:13 by jaiperei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#include <stdio.h>
+
+struct dog
+{
+    char *name;
+    char *breed;
+    int age;
+    char color[10];
+};
+
+int main()
+{
+	struct dog spike;
+	
+	spike.name = "spike";
+	spike. breed = "doberman";
+	spike.age = 5;
+
+	struct dog *ptr_dog;
+
+	ptr_dog = &spike;
+
+	printf("Value of name through pointer: %s\n", ptr_dog->name);
+	printf("Value of breed through pointer: %s\n", ptr_dog->breed);
+	printf("Value of breed through pointer: %d", ptr_dog->age);
+}

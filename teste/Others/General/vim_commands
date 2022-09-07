@@ -1,0 +1,37 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    vim_commands                                       :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jaiperei <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/01 11:16:43 by jaiperei          #+#    #+#              #
+#    Updated: 2022/09/01 11:16:51 by jaiperei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+in terminal
+
+* create file:
+vim fileName
+
+
+in vim:
+
+f1 to create 42 schools header
+
+* to edit:
+:i	//insert
+
+* save file:
+:w	//write
+:q 	//quit
+
+
+
+Misaligned variables:
+
+terminal: vim ~/.vimrc
+vim: :set tabstop=4
+
+
